@@ -2,8 +2,13 @@ import React from 'react'
 import './globals.css'
 import localFont from 'next/font/local'
 
+// const infinity2 = localFont({
+//   src: './fonts/Cheap Potatoes Black Thin.ttf',
+//   display: 'swap',
+// })
+
 const infinity = localFont({
-  src: './fonts/Cheap Potatoes Black Thin.ttf',
+  src: './fonts/regular.otf',
   display: 'swap',
 })
 

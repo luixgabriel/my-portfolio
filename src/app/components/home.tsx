@@ -4,6 +4,8 @@ import { styled } from 'styled-components'
 import IAphoto from '../../assets/Vana - Anime Arcade 2023-05-31-7_03_55AM 7 (1).png'
 import Image from 'next/image'
 import { Arrow } from './arrow'
+import { ToggleButton } from './toggle-button'
+import { useChangeLanguage } from '@/hooks/useChangeLanguage'
 
 const BackgroundImage = styled.section`
   width: 100%;
@@ -67,18 +69,24 @@ const Container = styled.div`
   }
 `
 export function HomePage(props: any) {
+  const { isChanged, handleChange } = useChangeLanguage()
+
   return (
     <BackgroundImage>
+      <ToggleButton toggled={isChanged} onClick={handleChange} />
       <Container>
         <Image src={IAphoto} alt="icon" />
-        {/* <div>
-          <h1>Hi There, I'm Luis Gabriel</h1>
-          <h2>Full Stack Developer in training!</h2>
-        </div> */}
-        <div>
-          <h1>Olá, eu sou o Luis Gabriel</h1>
-          <h2>Desenvolvedor Full Stack!</h2>
-        </div>
+        {isChanged ? (
+          <div>
+            <h1>Hi There, I'm Luis Gabriel</h1>
+            <h2>Full Stack Developer!</h2>
+          </div>
+        ) : (
+          <div>
+            <h1>Olá, eu sou o Luis Gabriel</h1>
+            <h2>Desenvolvedor Full Stack!</h2>
+          </div>
+        )}
         <Arrow />
       </Container>
     </BackgroundImage>

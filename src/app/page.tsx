@@ -1,6 +1,7 @@
 'use client'
 import { styled } from 'styled-components'
 import { HomePage } from './components/home'
+import { ChangeLanguageProvider } from '@/context/change-language'
 
 const ContainerMain = styled.main`
   display: flex;
@@ -10,13 +11,10 @@ const ContainerMain = styled.main`
 `
 export default function Home() {
   return (
-    <div>
+    <ChangeLanguageProvider>
       <ContainerMain>
         <HomePage />
-        <div>
-          <h1>sobre min</h1>
-        </div>
       </ContainerMain>
-    </div>
+    </ChangeLanguageProvider>
   )
 }

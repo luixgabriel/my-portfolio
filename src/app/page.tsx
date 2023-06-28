@@ -1,14 +1,19 @@
+'use client'
+import { styled } from 'styled-components'
 import { HomePage } from './components/home'
-import styles from './page.module.css'
 
-
+const ContainerMain = styled.main`
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+`
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <HomePage>
-        <h1>Hello world</h1>
-      </HomePage>
-        
-    </main>
+    <div>
+      <ContainerMain>
+        <HomePage />
+      </ContainerMain>
+    </div>
   )
 }

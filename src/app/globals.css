@@ -1,3 +1,10 @@
+:root {
+ 
+  --bg-primary: #5f2030;
+  --bg-secondary: #010707;
+ 
+}
+
 * {
   margin: 0;
   padding: 0;

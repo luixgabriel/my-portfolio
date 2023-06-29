@@ -2,6 +2,7 @@
 import { styled } from 'styled-components'
 import { HomePage } from './components/home'
 import { ChangeLanguageProvider } from '@/context/change-language'
+import { AboutMe } from './components/about-me'
 
 const ContainerMain = styled.main`
   display: flex;
@@ -14,6 +15,7 @@ export default function Home() {
     <ChangeLanguageProvider>
       <ContainerMain>
         <HomePage />
+        <AboutMe />
       </ContainerMain>
     </ChangeLanguageProvider>
   )

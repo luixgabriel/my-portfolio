@@ -3,6 +3,7 @@ import { styled } from 'styled-components'
 import Myphoto from '../../assets/me.jpg'
 import Image from 'next/image'
 import { HandMetal } from 'lucide-react'
+import { useChangeLanguage } from '@/hooks/useChangeLanguage'
 
 const Container = styled.section`
   background-color: var(--bg-primary);
@@ -34,7 +35,7 @@ const ContainerMyInfos = styled.div`
   width: 60%;
   span {
     font-size: 40px;
-    margin: 8px 0;
+    margin: 8px 0px;
   }
 
   p {
@@ -62,7 +63,7 @@ const ContainerMyInfos = styled.div`
     margin: 20px 0;
     span {
       font-size: 40px;
-      margin: 8px 0;
+      margin: 8px 0px;
       text-align: center;
     }
 
@@ -105,25 +106,50 @@ const ContainerMyPhoto = styled.div`
 `
 
 export function AboutMe() {
+  const { isChanged } = useChangeLanguage()
+
   return (
     <Container>
       <AboutMeConatiner>
         <ContainerMyInfos>
           <span>
-            Sobre mim <HandMetal />
+            {isChanged ? 'About Me' : 'Sobre mim'} <HandMetal />
           </span>
-          <p>
-            A programação é uma habilidade fundamental na era digital. Por meio
-            dela, é possível criar soluções inovadoras e resolver problemas
-            complexos. Através do desenvolvimento de algoritmos e código, os
-            programadores transformam ideias em realidade, criando aplicativos,
-            sites e sistemas que impulsionam o mundo moderno. A programação
-            requer pensamento lógico e analítico, pois envolve a criação de
-            sequências de comandos que serão executados por computadores.
-            Dominar diferentes linguagens de programação, como Python, Java ou
-            C++, permite aos desenvolvedores construir uma ampla variedade de
-            aplicações, desde jogos até sistemas de inteligência artificial.
-          </p>
+          {isChanged ? (
+            <p>
+              <p>
+                My name is Luis Gabriel and I'm studying to become a complete
+                Full Stack Developer. At 23 years old, I have a degree in
+                Information Systems and I've been passionate about technology
+                since I was 16. I started my career working as a computer
+                support during my internship, but I fell in love with
+                programming. Since then, I've been dedicated to studying web
+                development and I'm seeking my first opportunity as a developer.
+                I'm focused on expanding my knowledge in other areas as well
+                because I believe it can make me a more well-rounded and
+                versatile professional. I'm confident that I can bring value to
+                any position I take on, and I'm excited to put into practice
+                everything I've learned so far.
+              </p>
+            </p>
+          ) : (
+            <p>
+              Meu nome é Luis Gabriel e estou estudando para me tornar um
+              Programador Full Stack completo. Com 23 anos de idade, sou formado
+              em Sistemas de Informação e sou apaixonado por tecnologia desde os
+              16 anos. Comecei minha carreira trabalhando como suporte de
+              computadores durante meu estágio, mas acabei me apaixonando pela
+              programação. Desde então, tenho me dedicado aos estudos de
+              desenvolvimento web e estou em busca da minha primeira
+              oportunidade como desenvolvedor. Estou focado em expandir meus
+              conhecimentos em outras áreas também, pois acredito que isso pode
+              me tornar um profissional mais completo e versátil. Tenho
+              confiança de que posso agregar valor em qualquer posição que eu
+              assumir e estou animado para colocar em prática tudo o que aprendi
+              até agora.
+            </p>
+          )}
+
           <button>Download CV</button>
         </ContainerMyInfos>
         <ContainerMyPhoto>

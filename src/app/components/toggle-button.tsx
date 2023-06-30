@@ -7,7 +7,7 @@ interface ToggleButtonProps {
 }
 
 const ToggleButtonContainer = styled.div`
-  position: fixed;
+  position: absolute;
   color: white;
   width: 300px;
   height: 30px;
@@ -15,12 +15,12 @@ const ToggleButtonContainer = styled.div`
   right: -85px;
 `
 const ToggleLabel = styled.label`
-  position: fixed;
+  position: relative;
   display: inline-block;
   width: 60px;
   height: 30px;
-  top: 15px;
-  right: 10px;
+  top: 0px;
+  right: -8px;
   input {
     opacity: 0;
     width: 0;

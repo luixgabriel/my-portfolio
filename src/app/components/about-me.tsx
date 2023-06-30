@@ -127,7 +127,7 @@ export function AboutMe() {
           <button>Download CV</button>
         </ContainerMyInfos>
         <ContainerMyPhoto>
-          <Image src={Myphoto} />
+          <Image src={Myphoto} alt="my photo" />
         </ContainerMyPhoto>
       </AboutMeConatiner>
     </Container>

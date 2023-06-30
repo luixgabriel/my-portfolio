@@ -4,6 +4,8 @@ import Myphoto from '../../assets/me.jpg'
 import Image from 'next/image'
 import { HandMetal } from 'lucide-react'
 import { useChangeLanguage } from '@/hooks/useChangeLanguage'
+import { useEffect, useRef } from 'react'
+import { motion, useInView, useAnimation } from 'framer-motion'
 
 const Container = styled.section`
   background-color: var(--bg-primary);
@@ -15,7 +17,7 @@ const Container = styled.section`
   overflow-x: hidden;
 `
 
-const AboutMeConatiner = styled.div`
+const AboutMeContainer = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column-reverse;
@@ -107,12 +109,32 @@ const ContainerMyPhoto = styled.div`
 
 export function AboutMe() {
   const { isChanged } = useChangeLanguage()
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true })
+
+  const mainControls = useAnimation()
+
+  useEffect(() => {
+    if (isInView) {
+      mainControls.start('visible')
+    }
+  }, [isInView, mainControls])
 
   return (
     <Container>
-      <AboutMeConatiner>
+      <AboutMeContainer
+        ref={ref}
+        as={motion.div}
+        variants={{
+          hidden: { opacity: 0, y: 75 },
+          visible: { opacity: 1, y: 0 },
+        }}
+        initial="hidden"
+        animate={mainControls}
+        transition={{ duration: 0.5, delay: 0.25 }}
+      >
         <ContainerMyInfos>
-          <span>
+          <span className="animate__animated animate__bounce">
             {isChanged ? 'About Me' : 'Sobre mim'} <HandMetal />
           </span>
           {isChanged ? (
@@ -155,7 +177,7 @@ export function AboutMe() {
         <ContainerMyPhoto>
           <Image src={Myphoto} alt="my photo" />
         </ContainerMyPhoto>
-      </AboutMeConatiner>
+      </AboutMeContainer>
     </Container>
   )
 }

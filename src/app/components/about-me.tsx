@@ -10,11 +10,12 @@ import { motion, useInView, useAnimation } from 'framer-motion'
 const Container = styled.section`
   background-color: var(--bg-primary);
   width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  overflow-x: hidden;
+  overflow: hidden;
 `
 
 const AboutMeContainer = styled.div`

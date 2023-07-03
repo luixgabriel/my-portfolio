@@ -183,7 +183,7 @@ const ContainerMyPhoto = styled.div`
   }
 
   @media (max-width: 1110px) {
-    margin-top: 30px;
+    margin-top: 20px;
   }
 `
 
@@ -194,6 +194,14 @@ const ContainerSocialMediaIcons = styled.div`
     a {
       margin: 10px;
       color: white;
+    }
+  }
+
+  @media (max-width: 1110px) {
+    margin-top: 40px;
+    span {
+      display: flex;
+      flex-direction: row;
     }
   }
 `

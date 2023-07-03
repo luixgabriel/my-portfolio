@@ -107,7 +107,7 @@ const AboutMeContainer = styled.div`
   @media (min-width: 1110px) {
     flex-direction: row;
     width: 80%;
-    height: 60vh;
+    height: 70vh;
   }
 `
 const ContainerMyInfos = styled.div`

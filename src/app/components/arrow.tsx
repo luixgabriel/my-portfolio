@@ -1,5 +1,15 @@
 import styled, { keyframes } from 'styled-components'
 
+export function Arrow() {
+  return (
+    <ArrowContainer>
+      <ArrowSpan />
+      <SecondArrowSpan />
+      <ThirdArrowSpan />
+    </ArrowContainer>
+  )
+}
+
 const animate = keyframes`
   0% {
     opacity: 0;
@@ -63,13 +73,3 @@ const ThirdArrowSpan = styled.span`
     height: 1.5vw;
   }
 `
-
-export function Arrow() {
-  return (
-    <ArrowContainer>
-      <ArrowSpan />
-      <SecondArrowSpan />
-      <ThirdArrowSpan />
-    </ArrowContainer>
-  )
-}

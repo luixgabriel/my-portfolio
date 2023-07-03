@@ -6,6 +6,23 @@ interface ToggleButtonProps {
   onClick: () => void
 }
 
+export function ToggleButton({ toggled, onClick }: ToggleButtonProps) {
+  const { isChanged, handleChange } = useChangeLanguage()
+
+  const callback = () => {
+    handleChange()
+  }
+  return (
+    <ToggleButtonContainer>
+      <span>{isChanged ? 'Change Language' : 'Alterar Linguagem'}</span>
+      <ToggleLabel>
+        <input type="checkbox" defaultChecked={isChanged} onClick={callback} />
+        <span />
+      </ToggleLabel>
+    </ToggleButtonContainer>
+  )
+}
+
 const ToggleButtonContainer = styled.div`
   position: absolute;
   color: white;
@@ -58,20 +75,3 @@ const ToggleLabel = styled.label`
     transform: translateX(29px);
   }
 `
-
-export function ToggleButton({ toggled, onClick }: ToggleButtonProps) {
-  const { isChanged, handleChange } = useChangeLanguage()
-
-  const callback = () => {
-    handleChange()
-  }
-  return (
-    <ToggleButtonContainer>
-      <span>{isChanged ? 'Change Language' : 'Alterar Linguagem'}</span>
-      <ToggleLabel>
-        <input type="checkbox" defaultChecked={isChanged} onClick={callback} />
-        <span />
-      </ToggleLabel>
-    </ToggleButtonContainer>
-  )
-}

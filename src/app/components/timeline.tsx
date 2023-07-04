@@ -10,13 +10,34 @@ import {
   NextJs,
 } from '../icons/technologies-icons'
 import { useChangeLanguage } from '@/hooks/useChangeLanguage'
+import { motion, useAnimation, useInView } from 'framer-motion'
+import { useEffect, useRef } from 'react'
 
 export function TimeLineSkills() {
   const { isChanged } = useChangeLanguage()
-  console.log(isChanged)
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true })
+
+  const mainControls = useAnimation()
+
+  useEffect(() => {
+    if (isInView) {
+      mainControls.start('visible')
+    }
+  }, [isInView, mainControls])
   return (
     <Container>
-      <Timeline>
+      <Timeline
+        ref={ref}
+        as={motion.div}
+        variants={{
+          hidden: { opacity: 0, y: 75 },
+          visible: { opacity: 1, y: 0 },
+        }}
+        initial="hidden"
+        animate={mainControls}
+        transition={{ duration: 0.5, delay: 0.25 }}
+      >
         <TimelineContainer>
           <TimelineIcon>
             <Html />
@@ -145,7 +166,6 @@ export function TimeLineSkills() {
 }
 
 const Container = styled.div`
-  max-width: 650px;
   margin: 50px auto;
 `
 
@@ -199,6 +219,7 @@ const TimelineBody = styled.div`
   border-radius: 3px;
   padding: 20px 20px 15px;
   box-shadow: 1px 3px 9px rgba(0, 0, 0, 0.1);
+  width: 800px;
 
   &::before {
     content: '';
@@ -211,7 +232,7 @@ const TimelineBody = styled.div`
     transform: rotate(45deg);
     border-radius: 0 0 0 2px;
   }
-  @media (max-width: 750px) {
+  @media (max-width: 890px) {
     width: 400px;
   }
 

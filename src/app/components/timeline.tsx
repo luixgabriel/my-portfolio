@@ -192,6 +192,10 @@ const Timeline = styled.div`
     height: 100%;
     background: var(--color-secondary);
   }
+
+  @media (max-width: 1110px) {
+    width: 100%;
+  }
 `
 
 const TimelineContainer = styled.div`
@@ -234,6 +238,13 @@ const TimelineBody = styled.div`
     left: -10px;
     transform: rotate(45deg);
     border-radius: 0 0 0 2px;
+  }
+  @media (max-width: 750px) {
+    width: 400px;
+  }
+
+  @media (max-width: 519px) {
+    width: 260px;
   }
 
   .timeline-title {

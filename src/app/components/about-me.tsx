@@ -159,7 +159,7 @@ const ContainerMyInfos = styled.div`
       font-size: 20px;
       width: 200px;
       align-self: center;
-      margin-top: 10px;
+      margin: 40px 0px 90px 0px;
       border: 3px solid white;
       padding: 5px 10px;
       background: transparent;

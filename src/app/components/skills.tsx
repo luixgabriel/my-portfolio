@@ -24,4 +24,11 @@ const ContainerImage = styled.section`
   position: relative;
   overflow-x: hidden;
   color: white;
+
+  > div {
+    margin-top: 90px;
+    h1 {
+      font-size: 2rem;
+    }
+  }
 `

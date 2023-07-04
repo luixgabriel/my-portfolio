@@ -14,7 +14,7 @@ export function HomePage(props: any) {
     <BackgroundImage>
       <ToggleButton toggled={isChanged} onClick={handleChange} />
       <Container>
-        <Image src={IAphoto} alt="icon" />
+        <Image src={IAphoto} alt="icon" priority={true} />
         {isChanged ? (
           <div>
             <h1>Hi There, I'm Luis Gabriel</h1>

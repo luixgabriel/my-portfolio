@@ -1,21 +1,25 @@
 import { styled } from 'styled-components'
+import { TimeLineSkills } from './timeline'
 
 export function Skills() {
   return (
-    <Container>
-      <h1>Hello world</h1>
-    </Container>
+    <ContainerImage>
+      <div>
+        <h1>Habilidades</h1>
+      </div>
+      <TimeLineSkills />
+    </ContainerImage>
   )
 }
 
-const Container = styled.section`
+const ContainerImage = styled.section`
   width: 100%;
-  height: 100vh;
   background-image: url('../nightcity.jpg');
   background-position: center;
   background-size: cover;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   position: relative;
   overflow-x: hidden;

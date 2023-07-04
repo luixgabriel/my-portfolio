@@ -1,11 +1,13 @@
 import { styled } from 'styled-components'
 import { TimeLineSkills } from './timeline'
+import { useChangeLanguage } from '@/hooks/useChangeLanguage'
 
 export function Skills() {
+  const { isChanged } = useChangeLanguage()
   return (
     <ContainerImage>
       <div>
-        <h1>Habilidades</h1>
+        <h1>{isChanged ? 'Skills' : 'Habilidades'}</h1>
       </div>
       <TimeLineSkills />
     </ContainerImage>

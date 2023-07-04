@@ -88,8 +88,8 @@ export function AboutMe() {
 
 const Container = styled.section`
   background: var(--bg-primary);
-  background: -webkit-linear-gradient(to right, #5f2030, #801f29, #25080d);
-  background: linear-gradient(to right, #5f2030, #801f29, #25080d);
+  background: -webkit-linear-gradient(to right, #5f2030, #801f29, #641926);
+  background: linear-gradient(to right, #5f2030, #801f29, #641926);
   width: 100%;
   height: 100%;
   display: flex;

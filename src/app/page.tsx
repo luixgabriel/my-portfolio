@@ -6,6 +6,7 @@ import { AboutMe } from './components/about-me'
 import { Skills } from './components/skills'
 import { Repositories } from './components/repositories'
 import { UseRepositories } from '@/hooks/useRepositories'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 const ContainerMain = styled.main`
   display: flex;
@@ -16,15 +17,18 @@ const ContainerMain = styled.main`
 export default function Home() {
   const { reposFiltered } = UseRepositories()
   console.log(reposFiltered)
+  const client = new QueryClient()
 
   return (
     <ChangeLanguageProvider>
-      <ContainerMain>
-        <HomePage />
-        <AboutMe />
-        <Skills />
-        <Repositories />
-      </ContainerMain>
+      <QueryClientProvider client={client}>
+        <ContainerMain>
+          <HomePage />
+          <AboutMe />
+          <Skills />
+          <Repositories />
+        </ContainerMain>
+      </QueryClientProvider>
     </ChangeLanguageProvider>
   )
 }

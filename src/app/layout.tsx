@@ -4,11 +4,6 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import './globals.css'
 import localFont from 'next/font/local'
 
-// const infinity2 = localFont({
-//   src: './fonts/Cheap Potatoes Black Thin.ttf',
-//   display: 'swap',
-// })
-
 const infinity = localFont({
   src: './fonts/regular.otf',
   display: 'swap',

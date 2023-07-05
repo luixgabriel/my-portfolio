@@ -8,6 +8,7 @@ import {
   NodeJs,
   ReactJs,
   NextJs,
+  Database,
 } from '../icons/technologies-icons'
 import { useChangeLanguage } from '@/hooks/useChangeLanguage'
 import { motion, useAnimation, useInView } from 'framer-motion'
@@ -157,6 +158,23 @@ export function TimeLineSkills() {
               {isChanged
                 ? 'I have knowledge in the Next.js framework, and I can create web applications with server-side rendering (SSR) and client-side rendering (CSR), providing enhanced performance and SEO optimizations. I can also leverage advanced features like static generation and server-side rendering to create pre-rendered static pages or generate dynamic content at runtime.'
                 : 'Conhecimento no framework Next.js, posso criar aplicativos web com renderização no servidor (SSR) e no lado do cliente (CSR), proporcionando um desempenho aprimorado e otimizações para SEO. Também posso aproveitar recursos avançados, como geração estática e do lado do servidor, para criar páginas estáticas pré-renderizadas ou gerar conteúdo dinâmico em tempo de execução.'}
+            </p>
+          </TimelineBody>
+        </TimelineContainer>
+        <TimelineContainer>
+          <TimelineIcon>
+            <Database />
+          </TimelineIcon>
+          <TimelineBody>
+            <h4 className="timeline-title">
+              <span className="badge">
+                {isChanged ? 'DATABASE' : 'BANCO DE DADOS'}
+              </span>
+            </h4>
+            <p>
+              {isChanged
+                ? 'I have experience in projects with both SQL and NoSQL databases, with expertise in MySQL and SQLite as SQL databases and MongoDB as a NoSQL database. I am also knowledgeable in ORMs such as Prisma, Sequelize, and Mongoose. My skills encompass working with SQL and NoSQL databases, specifically MySQL, SQLite, and MongoDB, as well as utilizing the mentioned ORMs.'
+                : 'Tenho conhecimento e experiência no uso de ORMs como Prisma, Sequelize e Mongoose, além de habilidades em projetos envolvendo banco de dados SQL e NoSQL. Minha expertise inclui o uso de MySQL, SQLite e MongoDB, bem como a capacidade de trabalhar com essas tecnologias por meio dos ORMs mencionados.'}
             </p>
           </TimelineBody>
         </TimelineContainer>

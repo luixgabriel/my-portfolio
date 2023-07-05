@@ -14,8 +14,9 @@ const ContainerMain = styled.main`
   height: 100%;
 `
 export default function Home() {
-  const { repos } = UseRepositories()
-  console.log(repos)
+  const { reposFiltered } = UseRepositories()
+  console.log(reposFiltered)
+
   return (
     <ChangeLanguageProvider>
       <ContainerMain>

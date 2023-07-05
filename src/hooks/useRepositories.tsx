@@ -1,24 +1,28 @@
 import axios from '@/services/axios'
 import { IRepositorie } from '@/types/repositorie'
-import { useState } from 'react'
+import { useQuery } from '@tanstack/react-query'
 
 export function UseRepositories() {
-  const [repos, setRepos] = useState<IRepositorie[]>([])
-
   const fetcher = async () => {
-    const result = await axios('/repos')
-    const reposAPI = result.data
-    const reposFiltered: IRepositorie[] = reposAPI.map(
-      ({ name, html_url, description }: IRepositorie) => ({
-        name,
-        html_url,
-        description,
-      }),
-    )
-    setRepos(reposFiltered)
+    const data = await axios.get('/repos')
+    const reposAPI = data.data
+    return reposAPI
   }
 
-  fetcher()
+  const { data } = useQuery({
+    queryFn: () => fetcher(),
+    queryKey: ['repos'],
+    staleTime: 1000 * 60 * 1,
+  })
 
-  return { repos }
+  const reposFiltered: IRepositorie[] = data?.map(
+    ({ name, full_name, html_url, description }: IRepositorie) => ({
+      name,
+      full_name,
+      html_url,
+      description,
+    }),
+  )
+
+  return { reposFiltered }
 }

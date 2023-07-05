@@ -1,6 +1,7 @@
 import React from 'react'
 import './globals.css'
 import localFont from 'next/font/local'
+import { DefaultProviders } from './components/default-providers'
 
 const infinity = localFont({
   src: './fonts/regular.otf',
@@ -19,7 +20,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={infinity.className}>{children}</body>
+      <body className={infinity.className}>
+        <DefaultProviders>{children}</DefaultProviders>
+      </body>
     </html>
   )
 }

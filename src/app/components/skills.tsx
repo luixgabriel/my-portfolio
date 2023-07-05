@@ -1,13 +1,17 @@
 import { styled } from 'styled-components'
 import { TimeLineSkills } from './timeline'
 import { useChangeLanguage } from '@/hooks/useChangeLanguage'
+import { Swords } from 'lucide-react'
 
 export function Skills() {
   const { isChanged } = useChangeLanguage()
   return (
     <ContainerImage>
       <div>
-        <h1>{isChanged ? 'Skills' : 'Habilidades'}</h1>
+        <h1>
+          {isChanged ? 'Skills ' : 'Habilidades '}
+          <Swords />
+        </h1>
       </div>
       <TimeLineSkills />
     </ContainerImage>
@@ -30,7 +34,7 @@ const ContainerImage = styled.section`
   > div {
     margin-top: 90px;
     h1 {
-      font-size: 2rem;
+      font-size: 40px;
     }
   }
 `

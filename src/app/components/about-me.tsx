@@ -35,7 +35,7 @@ export function AboutMe() {
         transition={{ duration: 0.5, delay: 0.25 }}
       >
         <ContainerMyInfos>
-          <span className="animate__animated animate__bounce">
+          <span>
             {isChanged ? 'About Me' : 'Sobre mim'} <HandMetal />
           </span>
           {isChanged ? (

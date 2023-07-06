@@ -1,11 +1,15 @@
 import { UseRepositories } from '@/hooks/useRepositories'
 import { styled } from 'styled-components'
-import { Briefcase } from 'lucide-react'
+import { Briefcase, PlusCircle } from 'lucide-react'
 import { CardRepositories } from './card-repositorie'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion, useAnimation, useInView } from 'framer-motion'
+import { useChangeLanguage } from '@/hooks/useChangeLanguage'
+
 export function Repositories() {
   const { reposFiltered } = UseRepositories()
+  const { isChanged } = useChangeLanguage()
+  const [visible, setVisible] = useState(6)
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
 
@@ -16,10 +20,14 @@ export function Repositories() {
       mainControls.start('visible')
     }
   }, [isInView, mainControls])
+
+  const handleVisible = () => {
+    setVisible((prev) => prev + 3)
+  }
   return (
     <Container>
       <h1>
-        Projetos <Briefcase />
+        {isChanged ? 'Projects ' : 'Projetos '} <Briefcase />
       </h1>
       <ContainerRepositorie
         ref={ref}
@@ -32,7 +40,7 @@ export function Repositories() {
         animate={mainControls}
         transition={{ duration: 0.5, delay: 0.25 }}
       >
-        {reposFiltered?.map((item) => (
+        {reposFiltered?.slice(0, visible).map((item) => (
           <CardRepositories
             key={item.id}
             name={item.name}
@@ -41,11 +49,18 @@ export function Repositories() {
           />
         ))}
       </ContainerRepositorie>
+      {visible <= reposFiltered?.length && (
+        <button onClick={handleVisible}>
+          {isChanged ? 'Load More ' : 'Ver mais '} <PlusCircle />
+        </button>
+      )}
     </Container>
   )
 }
 
 const Container = styled.div`
+  display: flex;
+  flex-direction: column;
   width: 100%;
   padding: 60px;
   color: white;
@@ -54,6 +69,22 @@ const Container = styled.div`
   h1 {
     font-size: 40px;
     margin: 20px;
+  }
+  button {
+    transition: all 0.7s ease;
+    margin-top: 50px;
+    width: 200px;
+    align-self: flex-end;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #95a398;
+    border-radius: 30px;
+
+    &:hover {
+      color: white;
+    }
   }
 `
 

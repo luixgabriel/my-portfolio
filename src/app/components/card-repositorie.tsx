@@ -54,7 +54,8 @@ const CardRepositorie = styled.div`
     &:hover {
       color: #b9cabd;
     }
-    svg {
+    svg,
+    img {
       position: absolute;
       margin: 0px 5px;
       cursor: pointer;

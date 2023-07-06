@@ -1,6 +1,5 @@
 import { styled } from 'styled-components'
 import {
-  Html,
   Css,
   Javascript,
   Typescript,
@@ -43,7 +42,7 @@ export function TimeLineSkills() {
       >
         <TimelineContainer>
           <TimelineIcon>
-            <Image src={htmlPNG} />
+            <Image src={htmlPNG} alt="html" />
           </TimelineIcon>
           <TimelineBody>
             <h4 className="timeline-title">

@@ -4,6 +4,7 @@ import { HomePage } from './components/home'
 import { AboutMe } from './components/about-me'
 import { Skills } from './components/skills'
 import { Repositories } from './components/repositories'
+import { Footer } from './components/footer'
 
 const ContainerMain = styled.main`
   display: flex;
@@ -18,6 +19,7 @@ export default function Home() {
       <AboutMe />
       <Skills />
       <Repositories />
+      <Footer />
     </ContainerMain>
   )
 }

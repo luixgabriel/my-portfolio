@@ -4,7 +4,7 @@ import { styled } from 'styled-components'
 
 export function SocialMedias() {
   return (
-    <Teste>
+    <ContainerLinks>
       <Link
         href="https://www.linkedin.com/in/luis-gabriel-a447081b2/"
         target="_blank"
@@ -17,11 +17,11 @@ export function SocialMedias() {
       <Link href="https://github.com/luixgabriel" target="_blank">
         <Github />
       </Link>
-    </Teste>
+    </ContainerLinks>
   )
 }
 
-const Teste = styled.span`
+const ContainerLinks = styled.span`
   svg {
     transition: all 0.2s ease;
   }

@@ -16,7 +16,7 @@ export function Footer() {
             >
               <Linkedin />
             </Link>
-            <Link href="mailto:luisgasbriel@gmail.com">
+            <Link href="mailto:luisgasbriel@gmail.com" target="_blank">
               <Mail />
             </Link>
             <Link href="https://github.com/luixgabriel" target="_blank">
@@ -43,6 +43,10 @@ const ContaierFooter = styled.section`
   display: flex;
   justify-content: center;
   padding: 20px;
+
+  @media (max-width: 700px) {
+    align-items: center;
+  }
 `
 
 const ContainerInfoFooter = styled.div`
@@ -59,10 +63,13 @@ const ContainerInfoFooter = styled.div`
       width: 300px;
     }
   }
+
+  @media (max-width: 700px) {
+    flex-direction: column-reverse;
+  }
 `
 const ContainerLinksFooter = styled.div`
   display: flex;
-
   align-items: center;
 
   a {

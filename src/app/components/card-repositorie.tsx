@@ -1,9 +1,10 @@
 import { IRepositorie } from '@/types/repositorie'
 import { styled } from 'styled-components'
-import { Send } from '../icons/send'
 import { Github } from 'lucide-react'
 import Link from 'next/link'
 import { useChangeLanguage } from '@/hooks/useChangeLanguage'
+import Send from '../../assets/send-svgrepo-com.png'
+import Image from 'next/image'
 
 export function CardRepositories({
   name,
@@ -14,7 +15,8 @@ export function CardRepositories({
   return (
     <CardRepositorie>
       <Link href={html_url} target="_blank">
-        {isChanged ? 'View Repository ' : 'Ver repositório '} <Send />
+        {isChanged ? 'View Repository ' : 'Ver repositório '}{' '}
+        <Image src={Send} alt="send" />
       </Link>
       <div>
         <Github size={50} />
@@ -43,10 +45,13 @@ const CardRepositorie = styled.div`
     transform: translateY(-2px);
   }
   a {
+    text-align: center;
+    width: 100%;
+
     text-decoration: none;
     color: #95a398;
     position: absolute;
-    right: 40px;
+    right: -30px;
     top: 10px;
     padding: 5px;
     transition: all 0.2s ease;
@@ -54,7 +59,7 @@ const CardRepositorie = styled.div`
     &:hover {
       color: #b9cabd;
     }
-    svg,
+
     img {
       width: 25px;
       height: 25px;

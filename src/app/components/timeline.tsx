@@ -10,9 +10,11 @@ import {
   NextJs,
   Database,
 } from '../icons/technologies-icons'
+import { htmlPNG } from '../icons/iconsjpg'
 import { useChangeLanguage } from '@/hooks/useChangeLanguage'
 import { motion, useAnimation, useInView } from 'framer-motion'
 import { useEffect, useRef } from 'react'
+import Image from 'next/image'
 
 export function TimeLineSkills() {
   const { isChanged } = useChangeLanguage()
@@ -41,7 +43,7 @@ export function TimeLineSkills() {
       >
         <TimelineContainer>
           <TimelineIcon>
-            <Html />
+            <Image src={htmlPNG} />
           </TimelineIcon>
           <TimelineBody>
             <h4 className="timeline-title">
@@ -224,7 +226,10 @@ const TimelineIcon = styled.div`
   font-size: 2rem;
   background: var(--color-secondary);
 
-  svg {
+  svg,
+  img {
+    width: 25px;
+    height: 25px;
     position: absolute;
     left: 50%;
     top: 50%;

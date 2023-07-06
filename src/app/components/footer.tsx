@@ -2,13 +2,19 @@ import { styled } from 'styled-components'
 import { FixingBugs } from '../icons/fixing-bugs'
 import { Linkedin, Mail, Github } from 'lucide-react'
 import Link from 'next/link'
+import { useChangeLanguage } from '@/hooks/useChangeLanguage'
 
 export function Footer() {
+  const { isChanged } = useChangeLanguage()
   return (
     <ContaierFooter>
       <ContainerInfoFooter>
         <div>
-          <h1>Se interessou? Entre em contato!</h1>
+          <h1>
+            {isChanged
+              ? 'Interested? Contact!'
+              : 'Se interessou? Entre em contato!'}
+          </h1>
           <ContainerLinksFooter>
             <Link
               href="https://www.linkedin.com/in/luis-gabriel-a447081b2/"
@@ -23,11 +29,17 @@ export function Footer() {
               <Github />
             </Link>
           </ContainerLinksFooter>
-
-          <p>
-            ©2023 por Luis Gabriel. <br />
-            Todos os direitos reservados.
-          </p>
+          {isChanged ? (
+            <p>
+              ©2023 by Luis Gabriel. <br />
+              All rights reserved.
+            </p>
+          ) : (
+            <p>
+              ©2023 por Luis Gabriel. <br />
+              Todos os direitos reservados.
+            </p>
+          )}
         </div>
         <div>
           <FixingBugs />
@@ -75,6 +87,10 @@ const ContainerLinksFooter = styled.div`
   a {
     color: white;
     margin: 9px 0px;
+
+    &:hover {
+      color: #ff9293;
+    }
   }
   a:not(:first-of-type) {
     margin-left: 15px;

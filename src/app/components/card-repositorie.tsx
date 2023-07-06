@@ -55,11 +55,9 @@ const CardRepositorie = styled.div`
       color: #b9cabd;
     }
     svg {
-      width: 25px;
       position: absolute;
       margin: 0px 5px;
       cursor: pointer;
-      transition: all 0.2s ease;
     }
   }
 

@@ -4,7 +4,9 @@ export function Send() {
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      version="1.1"
       stroke="#95a398"
+      width="25px"
     >
       <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
       <g

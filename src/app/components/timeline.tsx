@@ -8,12 +8,13 @@ import {
   ReactJs,
   NextJs,
   Database,
+  Html,
 } from '../icons/technologies-icons'
-import { htmlPNG } from '../icons/iconsjpg'
+// import { htmlPNG } from '../icons/iconsjpg'
 import { useChangeLanguage } from '@/hooks/useChangeLanguage'
 import { motion, useAnimation, useInView } from 'framer-motion'
 import { useEffect, useRef } from 'react'
-import Image from 'next/image'
+// import Image from 'next/image'
 
 export function TimeLineSkills() {
   const { isChanged } = useChangeLanguage()
@@ -42,7 +43,7 @@ export function TimeLineSkills() {
       >
         <TimelineContainer>
           <TimelineIcon>
-            <Image src={htmlPNG} alt="html" />
+            <Html />
           </TimelineIcon>
           <TimelineBody>
             <h4 className="timeline-title">

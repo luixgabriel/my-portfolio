@@ -16,9 +16,9 @@ export function UseRepositories() {
   })
 
   const reposFiltered: IRepositorie[] = data?.map(
-    ({ name, full_name, html_url, description }: IRepositorie) => ({
+    ({ id, name, html_url, description }: IRepositorie) => ({
+      id,
       name,
-      full_name,
       html_url,
       description,
     }),

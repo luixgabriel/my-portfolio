@@ -4,7 +4,6 @@ import { HomePage } from './components/home'
 import { AboutMe } from './components/about-me'
 import { Skills } from './components/skills'
 import { Repositories } from './components/repositories'
-import { UseRepositories } from '@/hooks/useRepositories'
 
 const ContainerMain = styled.main`
   display: flex;
@@ -13,9 +12,6 @@ const ContainerMain = styled.main`
   height: 100%;
 `
 export default function Home() {
-  const { reposFiltered } = UseRepositories()
-  console.log(reposFiltered)
-
   return (
     <ContainerMain>
       <HomePage />

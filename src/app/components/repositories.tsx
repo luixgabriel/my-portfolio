@@ -1,58 +1,45 @@
+import { UseRepositories } from '@/hooks/useRepositories'
 import { styled } from 'styled-components'
-import { Github } from 'lucide-react'
-import { Send } from '../icons/send'
+import { Briefcase } from 'lucide-react'
+import { CardRepositories } from './card-repositorie'
+import { useEffect, useRef } from 'react'
+import { motion, useAnimation, useInView } from 'framer-motion'
 export function Repositories() {
+  const { reposFiltered } = UseRepositories()
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true })
+
+  const mainControls = useAnimation()
+
+  useEffect(() => {
+    if (isInView) {
+      mainControls.start('visible')
+    }
+  }, [isInView, mainControls])
   return (
     <Container>
-      <ContainerRepositorie>
-        <CardRepositorie>
-          <Send />
-          <div>
-            <Github size={50} />
-            <span>Acai-Store</span>
-            <p>Sistema de pedidos para uma loja de açai, Feito com VUE JS!</p>
-          </div>
-        </CardRepositorie>
-        <CardRepositorie>
-          <Send />
-          <div>
-            <Github size={50} />
-            <span>Acai-Store</span>
-            <p>Sistema de pedidos para uma loja de açai, Feito com VUE JS!</p>
-          </div>
-        </CardRepositorie>
-        <CardRepositorie>
-          <Send />
-          <div>
-            <Github size={50} />
-            <span>Acai-Store</span>
-            <p>Sistema de pedidos para uma loja de açai, Feito com VUE JS!</p>
-          </div>
-        </CardRepositorie>
-        <CardRepositorie>
-          <Send />
-          <div>
-            <Github size={50} />
-            <span>Acai-Store</span>
-            <p>Sistema de pedidos para uma loja de açai, Feito com VUE JS!</p>
-          </div>
-        </CardRepositorie>
-        <CardRepositorie>
-          <Send />
-          <div>
-            <Github size={50} />
-            <span>Acai-Store</span>
-            <p>Sistema de pedidos para uma loja de açai, Feito com VUE JS!</p>
-          </div>
-        </CardRepositorie>
-        <CardRepositorie>
-          <Send />
-          <div>
-            <Github size={50} />
-            <span>Acai-Store</span>
-            <p>Sistema de pedidos para uma loja de açai, Feito com VUE JS!</p>
-          </div>
-        </CardRepositorie>
+      <h1>
+        Projetos <Briefcase />
+      </h1>
+      <ContainerRepositorie
+        ref={ref}
+        as={motion.div}
+        variants={{
+          hidden: { opacity: 0, y: 75 },
+          visible: { opacity: 1, y: 0 },
+        }}
+        initial="hidden"
+        animate={mainControls}
+        transition={{ duration: 0.5, delay: 0.25 }}
+      >
+        {reposFiltered?.map((item) => (
+          <CardRepositories
+            key={item.id}
+            name={item.name}
+            html_url={item.html_url}
+            description={item.description}
+          />
+        ))}
       </ContainerRepositorie>
     </Container>
   )
@@ -62,7 +49,12 @@ const Container = styled.div`
   width: 100%;
   padding: 60px;
   color: white;
-  background: #000000;
+  background: -webkit-linear-gradient(to right, #5f2030, #801f29, #641926);
+  background: linear-gradient(to right, #191e1a, #37493a, #191e1a);
+  h1 {
+    font-size: 40px;
+    margin: 20px;
+  }
 `
 
 const ContainerRepositorie = styled.div`
@@ -73,42 +65,5 @@ const ContainerRepositorie = styled.div`
   align-items: center;
   gap: 60px;
   flex-wrap: wrap;
-`
-
-const CardRepositorie = styled.div`
-  width: 270px;
-  height: 300px;
-  position: relative;
-  display: flex;
-  justify-content: flex-start;
-  background: transparent;
-  box-shadow: 0 8px 32px 0 #191e1a;
-  backdrop-filter: blur(11.5px);
-  -webkit-backdrop-filter: blur(11.5px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  > a svg {
-    width: 25px;
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    cursor: pointer;
-  }
-  > div {
-    display: flex;
-    height: 100%;
-    justify-content: center;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-    margin: 10px 20px;
-    color: #95a398;
-    > svg {
-      color: #68776b;
-      border: 1px solid #68776b;
-      border-radius: 50%;
-      padding: 10px;
-      margin: 8px;
-    }
-  }
+  margin-top: 70px;
 `

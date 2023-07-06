@@ -56,6 +56,8 @@ const CardRepositorie = styled.div`
     }
     svg,
     img {
+      width: 25px;
+      height: 25px;
       position: absolute;
       margin: 0px 5px;
       cursor: pointer;

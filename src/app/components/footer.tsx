@@ -36,7 +36,8 @@ export function Footer() {
             </p>
           ) : (
             <p>
-              ©2023 por Luis Gabriel. <br />
+              ©2023 por Luis Gabriel. oi
+              <br />
               Todos os direitos reservados.
             </p>
           )}

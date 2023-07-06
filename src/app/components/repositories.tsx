@@ -5,9 +5,10 @@ import { CardRepositories } from './card-repositorie'
 import { useEffect, useRef, useState } from 'react'
 import { motion, useAnimation, useInView } from 'framer-motion'
 import { useChangeLanguage } from '@/hooks/useChangeLanguage'
+import { ErrorPage } from './error-page'
 
 export function Repositories() {
-  const { reposFiltered } = UseRepositories()
+  const { reposFiltered, isError } = UseRepositories()
   const { isChanged } = useChangeLanguage()
   const [visible, setVisible] = useState(6)
   const ref = useRef(null)
@@ -26,33 +27,45 @@ export function Repositories() {
   }
   return (
     <Container>
-      <h1>
-        {isChanged ? 'Projects ' : 'Projetos '} <Briefcase />
-      </h1>
-      <ContainerRepositorie
-        ref={ref}
-        as={motion.div}
-        variants={{
-          hidden: { opacity: 0, y: 75 },
-          visible: { opacity: 1, y: 0 },
-        }}
-        initial="hidden"
-        animate={mainControls}
-        transition={{ duration: 0.5, delay: 0.25 }}
-      >
-        {reposFiltered?.slice(0, visible).map((item) => (
-          <CardRepositories
-            key={item.id}
-            name={item.name}
-            html_url={item.html_url}
-            description={item.description}
-          />
-        ))}
-      </ContainerRepositorie>
-      {visible <= reposFiltered?.length && (
-        <button onClick={handleVisible}>
-          {isChanged ? 'Load More ' : 'Ver mais '} <PlusCircle />
-        </button>
+      {isError ? (
+        <>
+          <h1>
+            {isChanged ? 'Projects ' : 'Projetos '} <Briefcase />
+          </h1>
+          <ErrorPage />
+        </>
+      ) : (
+        <>
+          {' '}
+          <h1>
+            {isChanged ? 'Projects ' : 'Projetos '} <Briefcase />
+          </h1>
+          <ContainerRepositorie
+            ref={ref}
+            as={motion.div}
+            variants={{
+              hidden: { opacity: 0, y: 75 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            initial="hidden"
+            animate={mainControls}
+            transition={{ duration: 0.5, delay: 0.25 }}
+          >
+            {reposFiltered?.slice(0, visible).map((item) => (
+              <CardRepositories
+                key={item.id}
+                name={item.name}
+                html_url={item.html_url}
+                description={item.description}
+              />
+            ))}
+          </ContainerRepositorie>
+          {visible <= reposFiltered?.length && (
+            <button onClick={handleVisible}>
+              {isChanged ? 'Load More ' : 'Ver mais '} <PlusCircle />
+            </button>
+          )}
+        </>
       )}
     </Container>
   )
@@ -71,7 +84,7 @@ const Container = styled.div`
     margin: 20px;
   }
   button {
-    transition: all 0.7s ease;
+    transition: all 0.3s ease;
     margin-top: 50px;
     width: 200px;
     align-self: flex-end;

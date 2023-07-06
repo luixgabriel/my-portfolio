@@ -9,7 +9,7 @@ export function UseRepositories() {
     return reposAPI
   }
 
-  const { data } = useQuery({
+  const { data, isError } = useQuery({
     queryFn: () => fetcher(),
     queryKey: ['repos'],
     staleTime: 1000 * 60 * 1,
@@ -24,5 +24,5 @@ export function UseRepositories() {
     }),
   )
 
-  return { reposFiltered }
+  return { reposFiltered, isError }
 }

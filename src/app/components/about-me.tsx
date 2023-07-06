@@ -137,6 +137,12 @@ const ContainerMyInfos = styled.div`
     cursor: pointer;
     color: white;
     border-radius: 20px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: white;
+      color: var(--bg-primary);
+    }
   }
 
   @media (max-width: 1110px) {

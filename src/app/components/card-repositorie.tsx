@@ -3,16 +3,18 @@ import { styled } from 'styled-components'
 import { Send } from '../icons/send'
 import { Github } from 'lucide-react'
 import Link from 'next/link'
+import { useChangeLanguage } from '@/hooks/useChangeLanguage'
 
 export function CardRepositories({
   name,
   html_url,
   description,
 }: IRepositorie) {
+  const { isChanged } = useChangeLanguage()
   return (
     <CardRepositorie>
       <Link href={html_url} target="_blank">
-        <Send />
+        {isChanged ? 'View Repository ' : 'Ver repositório '} <Send />
       </Link>
       <div>
         <Github size={50} />
@@ -40,14 +42,27 @@ const CardRepositorie = styled.div`
     box-shadow: 0 8px 32px 0 #3b443d;
     transform: translateY(-2px);
   }
-  > a svg {
-    width: 25px;
+  a {
+    text-decoration: none;
+    color: #95a398;
     position: absolute;
-    right: 20px;
-    top: 20px;
-    cursor: pointer;
+    right: 40px;
+    top: 10px;
+    padding: 5px;
     transition: all 0.2s ease;
+
+    &:hover {
+      color: #b9cabd;
+    }
+    svg {
+      width: 25px;
+      position: absolute;
+      margin: 0px 5px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
   }
+
   > div {
     display: flex;
     height: 100%;
@@ -63,6 +78,12 @@ const CardRepositorie = styled.div`
       border-radius: 50%;
       padding: 10px;
       margin: 8px;
+    }
+    p {
+      width: 100%;
+    }
+    span {
+      width: 100%;
     }
   }
 `

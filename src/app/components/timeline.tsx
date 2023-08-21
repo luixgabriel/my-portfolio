@@ -9,6 +9,8 @@ import {
   NextJs,
   Database,
   Html,
+  NestJs,
+  Docker,
 } from '../icons/technologies-icons'
 // import { htmlPNG } from '../icons/iconsjpg'
 import { useChangeLanguage } from '@/hooks/useChangeLanguage'
@@ -135,6 +137,21 @@ export function TimeLineSkills() {
         </TimelineContainer>
         <TimelineContainer>
           <TimelineIcon>
+            <NestJs />
+          </TimelineIcon>
+          <TimelineBody>
+            <h4 className="timeline-title">
+              <span className="badge">NEST JS</span>
+            </h4>
+            <p>
+              {isChanged
+                ? 'I master the Nest.js framework, a powerful tool for building efficient and scalable server-side applications in JavaScript and TypeScript. With its modular and decorator-based architecture, I can craft robust solutions that easily integrate with databases, file systems, and APIs. Nest.js, by combining elements of object-oriented programming, functional programming, and reactive programming, allows me to develop with a clean and maintainable code standard. Moreover, its deep integration with the npm ecosystem ensures that I can rely on a wide range of packages to enrich and expand the capabilities of my applications.'
+                : 'Domino a framework Nest.js, uma poderosa ferramenta para construção de aplicações eficientes e escaláveis do lado do servidor em JavaScript e TypeScript. Com sua arquitetura modular e baseada em decoradores, sou capaz de criar soluções robustas que integram facilmente com bancos de dados, sistemas de arquivos e APIs. O Nest.js, ao combinar elementos de programação orientada a objetos, programação funcional e programação reativa, me permite desenvolver com um padrão de código limpo e manutenível. Além disso, sua integração profunda com o ecossistema do npm garante que posso contar com uma vasta gama de pacotes para enriquecer e expandir as capacidades das minhas aplicações.'}
+            </p>
+          </TimelineBody>
+        </TimelineContainer>
+        <TimelineContainer>
+          <TimelineIcon>
             <ReactJs />
           </TimelineIcon>
           <TimelineBody>
@@ -177,6 +194,21 @@ export function TimeLineSkills() {
               {isChanged
                 ? 'I have experience in projects with both SQL and NoSQL databases, with expertise in MySQL and SQLite as SQL databases and MongoDB as a NoSQL database. I am also knowledgeable in ORMs such as Prisma, Sequelize, and Mongoose. My skills encompass working with SQL and NoSQL databases, specifically MySQL, SQLite, and MongoDB, as well as utilizing the mentioned ORMs.'
                 : 'Tenho conhecimento e experiência no uso de ORMs como Prisma, Sequelize e Mongoose, além de habilidades em projetos envolvendo banco de dados SQL e NoSQL. Minha expertise inclui o uso de MySQL, SQLite e MongoDB, bem como a capacidade de trabalhar com essas tecnologias por meio dos ORMs mencionados.'}
+            </p>
+          </TimelineBody>
+        </TimelineContainer>
+        <TimelineContainer>
+          <TimelineIcon>
+            <Docker />
+          </TimelineIcon>
+          <TimelineBody>
+            <h4 className="timeline-title">
+              <span className="badge">DOCKER</span>
+            </h4>
+            <p>
+              {isChanged
+                ? 'I am skilled with Docker, a leading containerization tool that transforms application development and deployment. Using Docker, I ensure applications run consistently across platforms, enhancing scalability and security. With Docker Compose, I manage complex applications, and Docker Hub allows rapid access to pre-configured images.'
+                : 'Sou habilidoso com o Docker, uma ferramenta líder em containerização que transforma o desenvolvimento e implantação de aplicações. Usando Docker, garanto que as aplicações funcionem de forma consistente em diferentes plataformas, melhorando a escalabilidade e a segurança. Com o Docker Compose, gerencio aplicações complexas, e o Docker Hub permite acesso rápido a imagens pré-configuradas.'}
             </p>
           </TimelineBody>
         </TimelineContainer>

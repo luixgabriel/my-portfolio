@@ -7,6 +7,7 @@ import { useChangeLanguage } from '@/hooks/useChangeLanguage'
 import { useEffect, useRef } from 'react'
 import { motion, useInView, useAnimation } from 'framer-motion'
 import { SocialMedias } from './social-media'
+import Link from 'next/link'
 
 export function AboutMe() {
   const { isChanged } = useChangeLanguage()
@@ -73,7 +74,11 @@ export function AboutMe() {
             </p>
           )}
 
-          <button>Download CV</button>
+          <button>
+            <Link href="../cv.pdf" target="_blank" rel="noopener noreferrer">
+              Download CV
+            </Link>{' '}
+          </button>
         </ContainerMyInfos>
         <ContainerMyPhoto>
           <Image src={Myphoto} alt="my photo" />
@@ -139,9 +144,14 @@ const ContainerMyInfos = styled.div`
     border-radius: 20px;
     transition: all 0.3s ease;
 
-    &:hover {
-      background: white;
-      color: var(--bg-primary);
+    a {
+      color: white;
+      text-decoration: none;
+      width: 150px;
+      transition: all 0.3s ease;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 

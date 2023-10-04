@@ -5,6 +5,7 @@ import { useQuery } from '@tanstack/react-query'
 export function UseRepositories() {
   const fetcher = async () => {
     const data = await axios.get('/repos')
+    console.log(data)
     const reposAPI = data.data
     return reposAPI
   }

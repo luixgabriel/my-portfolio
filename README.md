@@ -1,34 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Portfólio de Luis Gabriel
 
-## Getting Started
+Olá! Meu nome é **Luis Gabriel**, um aspirante a Programador Full Stack com formação em Sistemas de Informação. A paixão pela tecnologia despertou em mim aos 16 anos, e desde então venho construindo minha carreira no mundo do desenvolvimento
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+![tela inicial](https://github.com/luixgabriel/my-portfolio/assets/70019908/39d644bd-7dc0-4be5-b268-13d8f9cf5272)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Minha Jornada
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Iniciei no mundo da tecnologia trabalhando com suporte de computadores, mas foi a programação que verdadeiramente capturou meu coração. Com dedicação contínua, venho aprimorando minhas habilidades e busco a minha primeira grande oportunidade como desenvolvedor.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+![secao sobre](https://github.com/luixgabriel/my-portfolio/assets/70019908/624295d5-9258-420d-a23a-3cfe62e4388f)
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## Habilidades
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Com uma base sólida em desenvolvimento web e uma incessante vontade de aprender, estou me preparando para ser um Programador Full Stack completo e versátil. 
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+![secao de habilidades](https://github.com/luixgabriel/my-portfolio/assets/70019908/74b1adc6-8140-451c-81ce-0748441deeac)
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Projetos
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Ao longo dos anos, tive a chance de trabalhar em diversos projetos que ajudaram a moldar minha experiência e visão como desenvolvedor.
+
+![secao projetos](https://github.com/luixgabriel/my-portfolio/assets/70019908/4d18dc4c-6570-49d0-b45f-64a363bbfc9d)
+
+
+## Contate-me
+
+Estou sempre aberto a novas oportunidades e aprendizado. Se você deseja discutir algum projeto ou apenas bater um papo sobre tecnologia, adoraria ouvir de você!
+
+

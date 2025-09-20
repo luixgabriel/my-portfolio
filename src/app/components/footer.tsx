@@ -37,12 +37,12 @@ export function Footer() {
           </ContainerLinksFooter>
           {isChanged ? (
             <p>
-              ©2023 by Luis Gabriel. <br />
+              ©2025 by Luis Gabriel. <br />
               All rights reserved.
             </p>
           ) : (
             <p>
-              ©2023 por Luis Gabriel.
+              ©2025 por Luis Gabriel.
               <br />
               Todos os direitos reservados.
             </p>

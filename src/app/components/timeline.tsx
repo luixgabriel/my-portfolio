@@ -11,6 +11,9 @@ import {
   Html,
   NestJs,
   Docker,
+  AWS,
+  Redis,
+  Linux,
 } from '../icons/technologies-icons'
 // import { htmlPNG } from '../icons/iconsjpg'
 import { useChangeLanguage } from '@/hooks/useChangeLanguage'
@@ -209,6 +212,51 @@ export function TimeLineSkills() {
               {isChanged
                 ? 'I am skilled with Docker, a leading containerization tool that transforms application development and deployment. Using Docker, I ensure applications run consistently across platforms, enhancing scalability and security. With Docker Compose, I manage complex applications, and Docker Hub allows rapid access to pre-configured images.'
                 : 'Sou habilidoso com o Docker, uma ferramenta líder em containerização que transforma o desenvolvimento e implantação de aplicações. Usando Docker, garanto que as aplicações funcionem de forma consistente em diferentes plataformas, melhorando a escalabilidade e a segurança. Com o Docker Compose, gerencio aplicações complexas, e o Docker Hub permite acesso rápido a imagens pré-configuradas.'}
+            </p>
+          </TimelineBody>
+        </TimelineContainer>
+        <TimelineContainer>
+          <TimelineIcon>
+            <AWS />
+          </TimelineIcon>
+          <TimelineBody>
+            <h4 className="timeline-title">
+              <span className="badge">AWS</span>
+            </h4>
+            <p>
+              {isChanged
+                ? 'I hold AWS Cloud Practitioner certification and have experience with cloud computing services. I can deploy and manage applications on AWS, utilizing services like EC2, S3, RDS, and Lambda. My knowledge includes cloud architecture best practices, security, and scalability concepts that enable efficient and cost-effective solutions.'
+                : 'Possuo certificação AWS Cloud Practitioner e tenho experiência com serviços de computação em nuvem. Posso implantar e gerenciar aplicações na AWS, utilizando serviços como EC2, S3, RDS e Lambda. Meu conhecimento inclui melhores práticas de arquitetura em nuvem, segurança e conceitos de escalabilidade que permitem soluções eficientes e econômicas.'}
+            </p>
+          </TimelineBody>
+        </TimelineContainer>
+        <TimelineContainer>
+          <TimelineIcon>
+            <Redis />
+          </TimelineIcon>
+          <TimelineBody>
+            <h4 className="timeline-title">
+              <span className="badge">REDIS</span>
+            </h4>
+            <p>
+              {isChanged
+                ? 'I have experience with Redis, an in-memory data structure store used as database, cache, and message broker. I can implement caching strategies to improve application performance, manage sessions, and create real-time data processing solutions. My knowledge includes Redis data types, persistence options, and clustering for high availability.'
+                : 'Tenho experiência com Redis, um armazenamento de estrutura de dados em memória usado como banco de dados, cache e message broker. Posso implementar estratégias de cache para melhorar a performance de aplicações, gerenciar sessões e criar soluções de processamento de dados em tempo real. Meu conhecimento inclui tipos de dados Redis, opções de persistência e clustering para alta disponibilidade.'}
+            </p>
+          </TimelineBody>
+        </TimelineContainer>
+        <TimelineContainer>
+          <TimelineIcon>
+            <Linux />
+          </TimelineIcon>
+          <TimelineBody>
+            <h4 className="timeline-title">
+              <span className="badge">LINUX</span>
+            </h4>
+            <p>
+              {isChanged
+                ? 'I have solid knowledge of Linux operating systems and command-line interface. I can manage servers, configure services, handle file permissions, and automate tasks using shell scripting. My experience includes system administration, process management, network configuration, and troubleshooting in Linux environments.'
+                : 'Tenho sólido conhecimento em sistemas operacionais Linux e interface de linha de comando. Posso gerenciar servidores, configurar serviços, manipular permissões de arquivos e automatizar tarefas usando shell scripting. Minha experiência inclui administração de sistemas, gerenciamento de processos, configuração de rede e resolução de problemas em ambientes Linux.'}
             </p>
           </TimelineBody>
         </TimelineContainer>

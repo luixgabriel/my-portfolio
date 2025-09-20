@@ -40,31 +40,34 @@ const CardRepositorie = styled.div`
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   transition: all 0.2s ease;
+  
   &:hover {
     box-shadow: 0 8px 32px 0 #3b443d;
     transform: translateY(-2px);
   }
-  a {
-    text-align: center;
-    width: 100%;
 
+  a {
     text-decoration: none;
     color: #95a398;
     position: absolute;
-    right: -30px;
-    top: 10px;
-    padding: 5px;
+    right: 15px;
+    top: 15px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
     transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 
     &:hover {
       color: #b9cabd;
     }
 
     img {
-      width: 25px;
-      height: 25px;
-      position: absolute;
-      margin: 0px 5px;
+      width: 16px;
+      height: 16px;
       cursor: pointer;
     }
   }
@@ -72,24 +75,49 @@ const CardRepositorie = styled.div`
   > div {
     display: flex;
     height: 100%;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: column;
     align-items: flex-start;
-    gap: 20px;
-    margin: 10px 20px;
+    padding: 20px;
     color: #95a398;
+    width: 100%;
+
     > svg {
       color: #68776b;
       border: 1px solid #68776b;
       border-radius: 50%;
       padding: 10px;
-      margin: 8px;
+      align-self: flex-start;
     }
-    p {
-      width: 100%;
-    }
+
     span {
       width: 100%;
+      font-size: 16px;
+      font-weight: 600;
+      color: #95a398;
+      margin: 15px 0 10px 0;
+      line-height: 1.3;
+      
+      /* Text truncation para títulos longos */
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    p {
+      width: 100%;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #95a398;
+      margin: 0;
+      flex-grow: 1;
+      
+      /* Text truncation para descrições longas */
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 `
